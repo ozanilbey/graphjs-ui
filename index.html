@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>GraphJS UI</title>
+        <link rel="stylesheet/less" type="text/css" href="styles.less" />
+        <script src="less.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <!-- graph-auth -->
+        <div class="graph-auth">
+            <div class="graph-auth-login box">
+                <div class="header">
+                    <div class="title">Login</div>
+                </div>
+                <div class="content">
+                    <form>
+                        <input type="text" placeholder="Enter your full name" />
+                        <input type="text" placeholder="Enter your password" />
+                        <button>Login</button>
+                        <div class="option double">
+                            <a href="">Not registered?</a>
+                            <a href="">Forgot Password</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="graph-auth-register box">
+                <div class="header">
+                    <!--
+                    <a class="option left">
+                        <svg fill="blue" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g transform="translate(-15.000000, -15.000000)" fill="black" fill-rule="nonzero">
+                                    <g>
+                                        <path d="M29.9834254,15 C38.2707182,15 45,21.6961326 45,29.9834254 C45,38.2707182 38.2707182,45 29.9834254,45 C21.6961326,45 15,38.2707182 15,29.9834254 C15,21.6961326 21.6961326,15 29.9834254,15 Z M29.9834254,42.3480663 C36.7790055,42.3480663 42.3480663,36.8121547 42.3480663,29.9834254 C42.3480663,23.1878453 36.8121547,17.6187845 29.9834254,17.6187845 C23.1878453,17.6187845 17.6187845,23.1546961 17.6187845,29.9834254 C17.6519337,36.7790055 23.1878453,42.3480663 29.9834254,42.3480663 Z M25.4088398,29.9834254 L31.6077348,36.1823204 L33.4972376,34.2928177 L29.1546961,29.9834254 L33.4972376,25.640884 L31.6077348,23.7513812 L25.4088398,29.9834254 Z"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </a>
+                    -->
+                    <div class="title">Register</div>
+                    <!--
+                    <a class="option right">
+                        <svg viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g transform="translate(-755.000000, -15.000000)" fill="black" fill-rule="nonzero">
+                                    <g>
+                                        <path d="M768.138179,30.0276818 L763.8,25.6895028 L765.689503,23.8 L770.011119,28.1447263 L774.332735,23.8 L776.222238,25.6895028 L771.884059,30.0276818 L771.888398,30.0320442 L771.884064,30.0363784 L776.222238,34.3414365 L774.332735,36.2309392 L770.011119,31.9093232 L765.689503,36.2309392 L763.8,34.3414365 L768.138174,30.0363784 L768.13384,30.0320442 L768.138179,30.0276818 Z M769.983425,15 C778.270718,15 785,21.6961326 785,29.9834254 C785,38.2707182 778.270718,45 769.983425,45 C761.696133,45 755,38.2707182 755,29.9834254 C755,21.6961326 761.696133,15 769.983425,15 Z M769.983425,42.3480663 C776.779006,42.3480663 782.348066,36.8121547 782.348066,29.9834254 C782.348066,23.1878453 776.812155,17.6187845 769.983425,17.6187845 C763.187845,17.6187845 757.618785,23.1546961 757.618785,29.9834254 C757.651934,36.7790055 763.187845,42.3480663 769.983425,42.3480663 Z"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </a>
+                    -->
+                </div>
+                <div class="content">
+                    <form>
+                        <input type="text" placeholder="Your full name" />
+                        <input type="text" placeholder="Your email address" />
+                        <input type="text" placeholder="Set password" />
+                        <input type="text" placeholder="Confirm password" />
+                        <button>Register</button>
+                        <div class="option single">
+                            <a href="">Already a member?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="graph-auth-remind box">
+                <div class="header">
+                    <!--
+                    <a class="option left">
+                        <svg fill="blue" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g transform="translate(-15.000000, -15.000000)" fill="black" fill-rule="nonzero">
+                                    <g>
+                                        <path d="M29.9834254,15 C38.2707182,15 45,21.6961326 45,29.9834254 C45,38.2707182 38.2707182,45 29.9834254,45 C21.6961326,45 15,38.2707182 15,29.9834254 C15,21.6961326 21.6961326,15 29.9834254,15 Z M29.9834254,42.3480663 C36.7790055,42.3480663 42.3480663,36.8121547 42.3480663,29.9834254 C42.3480663,23.1878453 36.8121547,17.6187845 29.9834254,17.6187845 C23.1878453,17.6187845 17.6187845,23.1546961 17.6187845,29.9834254 C17.6519337,36.7790055 23.1878453,42.3480663 29.9834254,42.3480663 Z M25.4088398,29.9834254 L31.6077348,36.1823204 L33.4972376,34.2928177 L29.1546961,29.9834254 L33.4972376,25.640884 L31.6077348,23.7513812 L25.4088398,29.9834254 Z"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </a>
+                    -->
+                    <div class="title">Reset Password</div>
+                    <!--
+                    <a class="option right">
+                        <svg viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g transform="translate(-755.000000, -15.000000)" fill="black" fill-rule="nonzero">
+                                    <g>
+                                        <path d="M768.138179,30.0276818 L763.8,25.6895028 L765.689503,23.8 L770.011119,28.1447263 L774.332735,23.8 L776.222238,25.6895028 L771.884059,30.0276818 L771.888398,30.0320442 L771.884064,30.0363784 L776.222238,34.3414365 L774.332735,36.2309392 L770.011119,31.9093232 L765.689503,36.2309392 L763.8,34.3414365 L768.138174,30.0363784 L768.13384,30.0320442 L768.138179,30.0276818 Z M769.983425,15 C778.270718,15 785,21.6961326 785,29.9834254 C785,38.2707182 778.270718,45 769.983425,45 C761.696133,45 755,38.2707182 755,29.9834254 C755,21.6961326 761.696133,15 769.983425,15 Z M769.983425,42.3480663 C776.779006,42.3480663 782.348066,36.8121547 782.348066,29.9834254 C782.348066,23.1878453 776.812155,17.6187845 769.983425,17.6187845 C763.187845,17.6187845 757.618785,23.1546961 757.618785,29.9834254 C757.651934,36.7790055 763.187845,42.3480663 769.983425,42.3480663 Z"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </a>
+                    -->
+                </div>
+                <div class="content">
+                    <form>
+                        <input type="text" placeholder="Your email address" />
+                        <button>Reset</button>
+                        <div class="option single">
+                            <a href="">Not registered?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- graph-alert -->
+        <div class="graph-alert box">
+            <div class="header">
+                <div class="title">Profile Created</div>
+            </div>
+            <div class="content">
+                <p>Your profile has been created.</p>
+            </div>
+            <button class="full">Reset</button>
+        </div>
+        <div class="graph-alert box">
+            <div class="header">
+                <div class="title">Login Required</div>
+            </div>
+            <div class="content">
+                <p>You need to login to view the group details.</p>
+            </div>
+            <button class="half">Login</button>
+            <button class="half danger">Cancel</button>
+        </div>
+        <!-- graph-state -->
+        <div class="graph-state box">
+            <div class="not-logged">
+                <a href="">Login</a>
+                <a href="">Register</a>
+            </div>
+        </div>
+        <div class="graph-state box">
+            <div class="logged">
+                <a href="" class="details">
+                    <img src="sample_data/user-avatar.png" />
+                    <span>Ozan Y.</span>
+                </a>
+                <a class="exit" href="">
+                    <svg viewBox="0 0 20 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g transform="translate(-17.000000, -16.000000)" fill="black" fill-rule="nonzero">
+                                <path d="M19.9086651,31.0702576 L25.9789227,31.0702576 L25.9789227,34 L17,34 L17,16 L26,16 L26,18.9297424 L19.9086651,18.9297424 L19.9086651,31.0702576 Z M29.3157895,21.0187266 L31.4210526,23.0580524 L23,23.0580524 L23,25.9213483 L31.4210526,25.9213483 L29.3157895,27.9812734 L31.3789474,30 L37,24.5 L31.3789474,19 L29.3157895,21.0187266 Z"></path>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="graph-state box colored">
+            <div class="not-logged">
+                <a href="">Login</a>
+                <a href="">Register</a>
+            </div>
+        </div>
+        <div class="graph-state box colored">
+            <div class="logged">
+                <a href="" class="details">
+                    <img src="sample_data/user-avatar.png" />
+                    <span>Ozan Y.</span>
+                </a>
+                <a class="exit" href="">
+                    <svg viewBox="0 0 20 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g transform="translate(-187.000000, -316.000000)" fill="black" fill-rule="nonzero">
+                                <g transform="translate(0.000000, 300.000000)">
+                                    <g transform="translate(170.000000, 0.000000)">
+                                        <path d="M19.9086651,31.0702576 L25.9789227,31.0702576 L25.9789227,34 L17,34 L17,16 L26,16 L26,18.9297424 L19.9086651,18.9297424 L19.9086651,31.0702576 Z M29.3157895,21.0187266 L31.4210526,23.0580524 L23,23.0580524 L23,25.9213483 L31.4210526,25.9213483 L29.3157895,27.9812734 L31.3789474,30 L37,24.5 L31.3789474,19 L29.3157895,21.0187266 Z"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <!-- graph-forum -->
+        <div class="graph-forum">
+            <div class="graph-forum-list box">
+                <div class="header">
+                    <div class="title">Community Forum</div>
+                </div>
+                <div class="content">
+                    <div class="bar">
+                        <div class="search">
+                            <div class="icon">
+                                <svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g transform="translate(-15.000000, -15.000000)" fill="black" fill-rule="nonzero">
+                                        <path d="M20.7680925,17.4466286 C17.9916599,20.2182136 17.582728,24.4722742 19.5628195,27.6735622 L15.5811138,31.6483159 C14.8062954,32.4217814 14.8062954,33.6464353 15.5811138,34.4199008 C16.3559322,35.1933664 17.582728,35.1933664 18.3575464,34.4199008 L22.3177294,30.4666324 C25.5246166,32.4217814 29.7861178,32.0350486 32.5625504,29.2634637 C35.8124832,26.0192053 35.8124832,20.7338573 32.5625504,17.4681138 C29.3126177,14.1808851 24.0180253,14.1808851 20.7680925,17.4466286 Z M30.1304816,26.7926709 C28.2149583,28.7048497 25.094162,28.7048497 23.1786387,26.7926709 C21.2631154,24.8804921 21.2631154,21.7651447 23.1786387,19.8529659 C25.094162,17.9407872 28.2149583,17.9407872 30.1304816,19.8529659 C32.0460048,21.7866298 32.0460048,24.8804921 30.1304816,26.7926709 Z" id="Shape" transform="translate(25.000000, 25.000000) scale(-1, 1) translate(-25.000000, -25.000000) "></path>
+
+                                    </g>
+                                </svg>
+                            </div>
+                            <input type="text" placeholder="Search in posts..." />
+                        </div>
+                        <button>
+                            <svg viewBox="0 0 21 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g transform="translate(-20.000000, -17.000000)" fill="black" fill-rule="nonzero">
+                                    <path d="M38.1489476,17 L22.6361271,17 C21.3968108,17 20.3925373,18.0239842 20.3925373,19.2876244 L20.3925373,30.4860904 C20.3925373,31.7497305 21.3968108,32.7737148 22.6361271,32.7737148 L24.7515117,32.7737148 L24.7515117,36.5428483 C24.7515117,36.9132256 25.1574946,37.1310946 25.4566399,36.9132256 L31.4609134,32.7737148 L38.1489476,32.7737148 C39.3882638,32.7737148 40.3925373,31.7497305 40.3925373,30.4860904 L40.3925373,19.2876244 C40.3925373,18.0239842 39.3882638,17 38.1489476,17 Z M31.2728027,25.8802653 L31.2728027,28.6472015 L29.1594735,28.6472015 L29.1594735,25.8802653 L26.3925373,25.8802653 L26.3925373,23.7669362 L29.1594735,23.7669362 L29.1594735,21 L31.2728027,21 L31.2728027,23.7669362 L34.0397388,23.7669362 L34.0397388,25.8802653 L31.2728027,25.8802653 Z"></path>
+                                </g>
+                            </svg>
+                            New Thread
+                        </button>
+                    </div>
+                    <div class="list">
+                        <a class="item">
+                            <div class="title">
+                                The title of the thread
+                            </div>
+                            <div class="views">
+                                <svg viewBox="0 0 19 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.75">
+                                        <g transform="translate(0.000000, -19.000000)" fill="black" fill-rule="nonzero">
+                                            <path d="M18.5059451,24.5206612 C16.1180812,21.0826446 12.8730354,19 9.32185322,19 C5.77067104,19 2.52562526,21.1157025 0.137761378,24.5206612 C-0.0459204592,24.8181818 -0.0459204592,25.1818182 0.137761378,25.4793388 C2.52562526,28.9173554 5.77067104,31 9.32185322,31 C12.8730354,31 16.1180812,28.8842975 18.5059451,25.4793388 C18.7202405,25.1818182 18.7202405,24.785124 18.5059451,24.5206612 Z M13.2403991,25.2479339 C13.1179445,27.3636364 11.5260353,29.0826446 9.56676233,29.214876 C7.2095121,29.3801653 5.25023917,27.2644628 5.40330737,24.7190083 C5.52576192,22.6033058 7.11767118,20.8842975 9.0769441,20.7520661 C11.4341943,20.5867769 13.3934673,22.7024793 13.2403991,25.2479339 Z M11.4341943,25.1157025 C11.3729671,26.2396694 10.5157852,27.1652893 9.47492142,27.231405 C8.18914856,27.3305785 7.14828482,26.1735537 7.24012573,24.8181818 C7.30135301,23.6942149 8.15853492,22.768595 9.19939866,22.7024793 C10.4545579,22.6033058 11.5260353,23.7603306 11.4341943,25.1157025 Z"></path>
+                                        </g>
+                                    </g>
+                                </svg>
+                                1.2K
+                            </div>
+                            <time>
+                                Feb 19
+                            </time>
+                            <div class="contributors">
+                                <img src="sample_data/user-avatar.png" />
+                                <img src="sample_data/user-avatar.png" />
+                                <img src="sample_data/user-avatar.png" />
+                                <img src="sample_data/user-avatar.png" />
+                            </div>
+                        </a>
+                        <a class="item">
+                            <div class="title">
+                                The title of the thread
+                            </div>
+                            <div class="views">
+                                <svg viewBox="0 0 19 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.75">
+                                        <g transform="translate(0.000000, -19.000000)" fill="black" fill-rule="nonzero">
+                                            <path d="M18.5059451,24.5206612 C16.1180812,21.0826446 12.8730354,19 9.32185322,19 C5.77067104,19 2.52562526,21.1157025 0.137761378,24.5206612 C-0.0459204592,24.8181818 -0.0459204592,25.1818182 0.137761378,25.4793388 C2.52562526,28.9173554 5.77067104,31 9.32185322,31 C12.8730354,31 16.1180812,28.8842975 18.5059451,25.4793388 C18.7202405,25.1818182 18.7202405,24.785124 18.5059451,24.5206612 Z M13.2403991,25.2479339 C13.1179445,27.3636364 11.5260353,29.0826446 9.56676233,29.214876 C7.2095121,29.3801653 5.25023917,27.2644628 5.40330737,24.7190083 C5.52576192,22.6033058 7.11767118,20.8842975 9.0769441,20.7520661 C11.4341943,20.5867769 13.3934673,22.7024793 13.2403991,25.2479339 Z M11.4341943,25.1157025 C11.3729671,26.2396694 10.5157852,27.1652893 9.47492142,27.231405 C8.18914856,27.3305785 7.14828482,26.1735537 7.24012573,24.8181818 C7.30135301,23.6942149 8.15853492,22.768595 9.19939866,22.7024793 C10.4545579,22.6033058 11.5260353,23.7603306 11.4341943,25.1157025 Z"></path>
+                                        </g>
+                                    </g>
+                                </svg>
+                                1.2K
+                            </div>
+                            <time>
+                                Feb 19
+                            </time>
+                            <div class="contributors">
+                                <img src="sample_data/user-avatar.png" />
+                                <img src="sample_data/user-avatar.png" />
+                                <img src="sample_data/user-avatar.png" />
+                                <img src="sample_data/user-avatar.png" />
+                            </div>
+                        </a>
+                        <a class="item">
+                            <div class="title">
+                                The title of the thread
+                            </div>
+                            <div class="views">
+                                <svg viewBox="0 0 19 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.75">
+                                        <g transform="translate(0.000000, -19.000000)" fill="black" fill-rule="nonzero">
+                                            <path d="M18.5059451,24.5206612 C16.1180812,21.0826446 12.8730354,19 9.32185322,19 C5.77067104,19 2.52562526,21.1157025 0.137761378,24.5206612 C-0.0459204592,24.8181818 -0.0459204592,25.1818182 0.137761378,25.4793388 C2.52562526,28.9173554 5.77067104,31 9.32185322,31 C12.8730354,31 16.1180812,28.8842975 18.5059451,25.4793388 C18.7202405,25.1818182 18.7202405,24.785124 18.5059451,24.5206612 Z M13.2403991,25.2479339 C13.1179445,27.3636364 11.5260353,29.0826446 9.56676233,29.214876 C7.2095121,29.3801653 5.25023917,27.2644628 5.40330737,24.7190083 C5.52576192,22.6033058 7.11767118,20.8842975 9.0769441,20.7520661 C11.4341943,20.5867769 13.3934673,22.7024793 13.2403991,25.2479339 Z M11.4341943,25.1157025 C11.3729671,26.2396694 10.5157852,27.1652893 9.47492142,27.231405 C8.18914856,27.3305785 7.14828482,26.1735537 7.24012573,24.8181818 C7.30135301,23.6942149 8.15853492,22.768595 9.19939866,22.7024793 C10.4545579,22.6033058 11.5260353,23.7603306 11.4341943,25.1157025 Z"></path>
+                                        </g>
+                                    </g>
+                                </svg>
+                                1.2K
+                            </div>
+                            <time>
+                                Feb 19
+                            </time>
+                            <div class="contributors">
+                                <img src="sample_data/user-avatar.png" />
+                                <img src="sample_data/user-avatar.png" />
+                                <img src="sample_data/user-avatar.png" />
+                                <img src="sample_data/user-avatar.png" />
+                            </div>
+                        </a>
+                        <a class="item">
+                            <div class="title">
+                                The title of the thread
+                            </div>
+                            <div class="views">
+                                <svg viewBox="0 0 19 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.75">
+                                        <g transform="translate(0.000000, -19.000000)" fill="black" fill-rule="nonzero">
+                                            <path d="M18.5059451,24.5206612 C16.1180812,21.0826446 12.8730354,19 9.32185322,19 C5.77067104,19 2.52562526,21.1157025 0.137761378,24.5206612 C-0.0459204592,24.8181818 -0.0459204592,25.1818182 0.137761378,25.4793388 C2.52562526,28.9173554 5.77067104,31 9.32185322,31 C12.8730354,31 16.1180812,28.8842975 18.5059451,25.4793388 C18.7202405,25.1818182 18.7202405,24.785124 18.5059451,24.5206612 Z M13.2403991,25.2479339 C13.1179445,27.3636364 11.5260353,29.0826446 9.56676233,29.214876 C7.2095121,29.3801653 5.25023917,27.2644628 5.40330737,24.7190083 C5.52576192,22.6033058 7.11767118,20.8842975 9.0769441,20.7520661 C11.4341943,20.5867769 13.3934673,22.7024793 13.2403991,25.2479339 Z M11.4341943,25.1157025 C11.3729671,26.2396694 10.5157852,27.1652893 9.47492142,27.231405 C8.18914856,27.3305785 7.14828482,26.1735537 7.24012573,24.8181818 C7.30135301,23.6942149 8.15853492,22.768595 9.19939866,22.7024793 C10.4545579,22.6033058 11.5260353,23.7603306 11.4341943,25.1157025 Z"></path>
+                                        </g>
+                                    </g>
+                                </svg>
+                                1.2K
+                            </div>
+                            <time>
+                                Feb 19
+                            </time>
+                            <div class="contributors">
+                                <img src="sample_data/user-avatar.png" />
+                                <img src="sample_data/user-avatar.png" />
+                                <img src="sample_data/user-avatar.png" />
+                                <img src="sample_data/user-avatar.png" />
+                            </div>
+                        </a>
+                        <a class="item">
+                            <div class="title">
+                                The title of the thread
+                            </div>
+                            <div class="views">
+                                <svg viewBox="0 0 19 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.75">
+                                        <g transform="translate(0.000000, -19.000000)" fill="black" fill-rule="nonzero">
+                                            <path d="M18.5059451,24.5206612 C16.1180812,21.0826446 12.8730354,19 9.32185322,19 C5.77067104,19 2.52562526,21.1157025 0.137761378,24.5206612 C-0.0459204592,24.8181818 -0.0459204592,25.1818182 0.137761378,25.4793388 C2.52562526,28.9173554 5.77067104,31 9.32185322,31 C12.8730354,31 16.1180812,28.8842975 18.5059451,25.4793388 C18.7202405,25.1818182 18.7202405,24.785124 18.5059451,24.5206612 Z M13.2403991,25.2479339 C13.1179445,27.3636364 11.5260353,29.0826446 9.56676233,29.214876 C7.2095121,29.3801653 5.25023917,27.2644628 5.40330737,24.7190083 C5.52576192,22.6033058 7.11767118,20.8842975 9.0769441,20.7520661 C11.4341943,20.5867769 13.3934673,22.7024793 13.2403991,25.2479339 Z M11.4341943,25.1157025 C11.3729671,26.2396694 10.5157852,27.1652893 9.47492142,27.231405 C8.18914856,27.3305785 7.14828482,26.1735537 7.24012573,24.8181818 C7.30135301,23.6942149 8.15853492,22.768595 9.19939866,22.7024793 C10.4545579,22.6033058 11.5260353,23.7603306 11.4341943,25.1157025 Z"></path>
+                                        </g>
+                                    </g>
+                                </svg>
+                                1.2K
+                            </div>
+                            <time>
+                                Feb 19
+                            </time>
+                            <div class="contributors">
+                                <img src="sample_data/user-avatar.png" />
+                                <img src="sample_data/user-avatar.png" />
+                                <img src="sample_data/user-avatar.png" />
+                                <img src="sample_data/user-avatar.png" />
+                            </div>
+                        </a>
+                        <a class="item">
+                            <div class="title">
+                                The title of the thread
+                            </div>
+                            <div class="views">
+                                <svg viewBox="0 0 19 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.75">
+                                        <g transform="translate(0.000000, -19.000000)" fill="black" fill-rule="nonzero">
+                                            <path d="M18.5059451,24.5206612 C16.1180812,21.0826446 12.8730354,19 9.32185322,19 C5.77067104,19 2.52562526,21.1157025 0.137761378,24.5206612 C-0.0459204592,24.8181818 -0.0459204592,25.1818182 0.137761378,25.4793388 C2.52562526,28.9173554 5.77067104,31 9.32185322,31 C12.8730354,31 16.1180812,28.8842975 18.5059451,25.4793388 C18.7202405,25.1818182 18.7202405,24.785124 18.5059451,24.5206612 Z M13.2403991,25.2479339 C13.1179445,27.3636364 11.5260353,29.0826446 9.56676233,29.214876 C7.2095121,29.3801653 5.25023917,27.2644628 5.40330737,24.7190083 C5.52576192,22.6033058 7.11767118,20.8842975 9.0769441,20.7520661 C11.4341943,20.5867769 13.3934673,22.7024793 13.2403991,25.2479339 Z M11.4341943,25.1157025 C11.3729671,26.2396694 10.5157852,27.1652893 9.47492142,27.231405 C8.18914856,27.3305785 7.14828482,26.1735537 7.24012573,24.8181818 C7.30135301,23.6942149 8.15853492,22.768595 9.19939866,22.7024793 C10.4545579,22.6033058 11.5260353,23.7603306 11.4341943,25.1157025 Z"></path>
+                                        </g>
+                                    </g>
+                                </svg>
+                                1.2K
+                            </div>
+                            <time>
+                                Feb 19
+                            </time>
+                            <div class="contributors">
+                                <img src="sample_data/user-avatar.png" />
+                                <img src="sample_data/user-avatar.png" />
+                                <img src="sample_data/user-avatar.png" />
+                                <img src="sample_data/user-avatar.png" />
+                            </div>
+                        </a>
+                        <a class="item">
+                            <div class="title">
+                                The title of the thread
+                            </div>
+                            <div class="views">
+                                <svg viewBox="0 0 19 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.75">
+                                        <g transform="translate(0.000000, -19.000000)" fill="black" fill-rule="nonzero">
+                                            <path d="M18.5059451,24.5206612 C16.1180812,21.0826446 12.8730354,19 9.32185322,19 C5.77067104,19 2.52562526,21.1157025 0.137761378,24.5206612 C-0.0459204592,24.8181818 -0.0459204592,25.1818182 0.137761378,25.4793388 C2.52562526,28.9173554 5.77067104,31 9.32185322,31 C12.8730354,31 16.1180812,28.8842975 18.5059451,25.4793388 C18.7202405,25.1818182 18.7202405,24.785124 18.5059451,24.5206612 Z M13.2403991,25.2479339 C13.1179445,27.3636364 11.5260353,29.0826446 9.56676233,29.214876 C7.2095121,29.3801653 5.25023917,27.2644628 5.40330737,24.7190083 C5.52576192,22.6033058 7.11767118,20.8842975 9.0769441,20.7520661 C11.4341943,20.5867769 13.3934673,22.7024793 13.2403991,25.2479339 Z M11.4341943,25.1157025 C11.3729671,26.2396694 10.5157852,27.1652893 9.47492142,27.231405 C8.18914856,27.3305785 7.14828482,26.1735537 7.24012573,24.8181818 C7.30135301,23.6942149 8.15853492,22.768595 9.19939866,22.7024793 C10.4545579,22.6033058 11.5260353,23.7603306 11.4341943,25.1157025 Z"></path>
+                                        </g>
+                                    </g>
+                                </svg>
+                                1.2K
+                            </div>
+                            <time>
+                                Feb 19
+                            </time>
+                            <div class="contributors">
+                                <img src="sample_data/user-avatar.png" />
+                                <img src="sample_data/user-avatar.png" />
+                                <img src="sample_data/user-avatar.png" />
+                                <img src="sample_data/user-avatar.png" />
+                            </div>
+                        </a>
+                        <a class="item">
+                            <div class="title">
+                                The title of the thread
+                            </div>
+                            <div class="views">
+                                <svg viewBox="0 0 19 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.75">
+                                        <g transform="translate(0.000000, -19.000000)" fill="black" fill-rule="nonzero">
+                                            <path d="M18.5059451,24.5206612 C16.1180812,21.0826446 12.8730354,19 9.32185322,19 C5.77067104,19 2.52562526,21.1157025 0.137761378,24.5206612 C-0.0459204592,24.8181818 -0.0459204592,25.1818182 0.137761378,25.4793388 C2.52562526,28.9173554 5.77067104,31 9.32185322,31 C12.8730354,31 16.1180812,28.8842975 18.5059451,25.4793388 C18.7202405,25.1818182 18.7202405,24.785124 18.5059451,24.5206612 Z M13.2403991,25.2479339 C13.1179445,27.3636364 11.5260353,29.0826446 9.56676233,29.214876 C7.2095121,29.3801653 5.25023917,27.2644628 5.40330737,24.7190083 C5.52576192,22.6033058 7.11767118,20.8842975 9.0769441,20.7520661 C11.4341943,20.5867769 13.3934673,22.7024793 13.2403991,25.2479339 Z M11.4341943,25.1157025 C11.3729671,26.2396694 10.5157852,27.1652893 9.47492142,27.231405 C8.18914856,27.3305785 7.14828482,26.1735537 7.24012573,24.8181818 C7.30135301,23.6942149 8.15853492,22.768595 9.19939866,22.7024793 C10.4545579,22.6033058 11.5260353,23.7603306 11.4341943,25.1157025 Z"></path>
+                                        </g>
+                                    </g>
+                                </svg>
+                                1.2K
+                            </div>
+                            <time>
+                                Feb 19
+                            </time>
+                            <div class="contributors">
+                                <img src="sample_data/user-avatar.png" />
+                                <img src="sample_data/user-avatar.png" />
+                                <img src="sample_data/user-avatar.png" />
+                                <img src="sample_data/user-avatar.png" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="graph-forum">
+            <div class="graph-forum-compose box">
+                <div class="header">
+                    <div class="title">New Thread</div>
+                    <a class="option right">
+                        <svg viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g transform="translate(-755.000000, -15.000000)" fill="black" fill-rule="nonzero">
+                                <path d="M768.138179,30.0276818 L763.8,25.6895028 L765.689503,23.8 L770.011119,28.1447263 L774.332735,23.8 L776.222238,25.6895028 L771.884059,30.0276818 L771.888398,30.0320442 L771.884064,30.0363784 L776.222238,34.3414365 L774.332735,36.2309392 L770.011119,31.9093232 L765.689503,36.2309392 L763.8,34.3414365 L768.138174,30.0363784 L768.13384,30.0320442 L768.138179,30.0276818 Z M769.983425,15 C778.270718,15 785,21.6961326 785,29.9834254 C785,38.2707182 778.270718,45 769.983425,45 C761.696133,45 755,38.2707182 755,29.9834254 C755,21.6961326 761.696133,15 769.983425,15 Z M769.983425,42.3480663 C776.779006,42.3480663 782.348066,36.8121547 782.348066,29.9834254 C782.348066,23.1878453 776.812155,17.6187845 769.983425,17.6187845 C763.187845,17.6187845 757.618785,23.1546961 757.618785,29.9834254 C757.651934,36.7790055 763.187845,42.3480663 769.983425,42.3480663 Z"></path>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+                <div class="content">
+                    <form>
+                        <input type="text" placeholder="Enter your post title here..." />
+                        <textarea placeholder="Compose your post here..."></textarea>
+                        <span>
+                            <b>Supported formats:</b> Markdown
+                        </span>
+                        <button>Publish</button>
+                        <button class="danger">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="graph-forum">
+            <div class="graph-forum-entry box">
+                <div class="header">
+                    <a class="option left">
+                        <svg fill="blue" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g transform="translate(-15.000000, -15.000000)" fill="black" fill-rule="nonzero">
+                                <path d="M29.9834254,15 C38.2707182,15 45,21.6961326 45,29.9834254 C45,38.2707182 38.2707182,45 29.9834254,45 C21.6961326,45 15,38.2707182 15,29.9834254 C15,21.6961326 21.6961326,15 29.9834254,15 Z M29.9834254,42.3480663 C36.7790055,42.3480663 42.3480663,36.8121547 42.3480663,29.9834254 C42.3480663,23.1878453 36.8121547,17.6187845 29.9834254,17.6187845 C23.1878453,17.6187845 17.6187845,23.1546961 17.6187845,29.9834254 C17.6519337,36.7790055 23.1878453,42.3480663 29.9834254,42.3480663 Z M25.4088398,29.9834254 L31.6077348,36.1823204 L33.4972376,34.2928177 L29.1546961,29.9834254 L33.4972376,25.640884 L31.6077348,23.7513812 L25.4088398,29.9834254 Z"></path>
+                            </g>
+                        </svg>
+                    </a>
+                    <div class="title">Thread by Hester Evans</div>
+                </div>
+                <div class="content">
+                    <div class="credit">
+                        <img src="sample_data/user-avatar.png" />
+                        <span>
+                            Hester Evans
+                            <br />
+                            <small>February 10, 2018 8:05AM</small>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
