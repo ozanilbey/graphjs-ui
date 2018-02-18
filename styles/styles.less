@@ -23,12 +23,11 @@
 @border-radius-small:  3px;
 @border-radius-full:   50%;
 
-@font-size-xsmall: 13px;
-@font-size-small:  15px;
-@font-size-medium: 17px;
-@font-size-large:  19px;
-@font-size-xlarge: 21px;
-@font-size-default: @font-size-medium;
+@font-size-small:  12px;
+@font-size-medium: 14px;
+@font-size-large:  16px;
+@font-size-xlarge: 18px;
+@font-size-default: @font-size-large;
 
 @bar-height: 50px;
 
@@ -167,12 +166,12 @@
     }
     span {
         height: @height;
-        margin-left: @height * .175;
+        margin-left: @height * .2;
         padding: @height * .125 0;
-        font-size: @height * .425;
+        font-size: @height * .375;
         line-height: @height * .425;
         height: @height;
-        small, text {
+        small, time {
             font-size: @height * .325;
             line-height: @height * .325;
         }
@@ -276,7 +275,7 @@ button {
     cursor: pointer;
     font-size: @font-size-default * 1.1;
     color: @contrast-color;
-    .bold-font;
+    .heavy-font;
     .single-line-text;
     text-transform: uppercase;
     .transition(background-color .35s ease);
@@ -289,9 +288,9 @@ button {
 form {
     display: inline-block;
     input, textarea {
-        margin-bottom: .6em;
+        margin-bottom: .5em;
         & + button {
-            margin-top: .3em;
+            margin-top: .25em;
         }
     }
 }
@@ -307,28 +306,28 @@ form {
     .header {
         position: relative;
         width: 100%;
-        height: 3.3em;
+        height: 3.5em;
         .medium-font;
-        line-height: 3.3em;
-        letter-spacing: -.015em;
+        line-height: 3.5em;
+        letter-spacing: -.005em;
         text-align: center;
         border-bottom: 2px solid fade(@secondary-color, 10%);
         background-color: @contrast-color;
         .title {
             position: absolute;
             top: 0;
-            right: 2.7em;
+            right: 2.5em;
             bottom: 0;
-            left: 2.7em;
+            left: 2.5em;
             width: auto;
             color: @primary-color;
-            font-size: 1.35em;
+            font-size: 1.25em;
             .single-line-text;
         }
         .option {
             display: inline-block;
-            width: 3.3em;
-            height: 3.3em;
+            width: 3.5em;
+            height: 3.5em;
             text-align: center;
             .icon-color-states(@primary-color);
             &.left {
@@ -340,8 +339,8 @@ form {
             svg {
                 position: relative;
                 top: -1px;
-                width: 1.5em;
-                height: 1.5em;
+                width: 1.75em;
+                height: 1.75em;
                 vertical-align: middle;
                 path {
                     fill: @primary-color;
@@ -352,12 +351,11 @@ form {
     }
     .content {
         width: 100%;
-        padding: 2em;
+        padding: 2.5em;
         p {
             margin: 0;
             font-size: @font-size-default;
             line-height: 150%;
-            text-align: center;
         }
     }
 }
@@ -378,9 +376,9 @@ form {
         height: inherit;
         color: @primary-color;
         .bold-font;
-        small {
+        small, time {
             width: 100%;
-            color: @text-color-normal;
+            color: @text-color-weak;
             font-size: .85em;
             .regular-font;
         }
@@ -388,6 +386,152 @@ form {
 }
 
 /* ### Components ### */
+
+// Messages
+
+.@{prefix}-messages {
+    width: 800px;
+    .content {
+        height: 27em;
+        max-height: 27em;
+        .no-padding;
+        & > * {
+            float: left;
+        }
+        .sidebar {
+            overflow: scroll;
+            width: 15em;
+            height: 100%;
+            .item {
+                display: table;
+                width: 100%;
+                height: 4.5em;
+                padding: calc(.75em - 1px);
+                padding-bottom: calc(.75em + 1px);
+                border-right: 1px solid fade(@secondary-color, 15%);
+                border-bottom: 1px solid fade(@secondary-color, 15%);
+                &:hover {
+                    background-color: fade(@primary-color, 5%);
+                }
+                &:last-child {
+                    border-bottom: none;
+                }
+                &.unread {
+                    background-color: fade(@primary-color, 5%);
+                    div {
+                        b {
+                            color: @primary-color;
+                        }
+                    }
+                }
+                &.active {
+                    border-right: none;
+                    background-color: @contrast-color !important;
+                }
+                img {
+                    width: calc(3em + 1px);
+                    height: calc(3em + 1px);
+                    .border-radius(@border-radius-full);
+                }
+                div {
+                    display: inline-block;
+                    overflow: hidden;
+                    width: 10em / .9;
+                    height: 3em / .9;
+                    margin-left: calc(.5em / .9);
+                    color: @text-color-normal;
+                    font-size: .9em;
+                    line-height: 1em / .9;
+                    b {
+                        display: block;
+                        margin-bottom: .05em / .9;
+                        color: @text-color-strong;
+                        font-size: .95em / .9;
+                        line-height: .95em / .9;
+                        .bold-font;
+                    }
+                }
+            }
+        }
+        .main {
+            overflow: scroll;
+            position: relative;
+            width: calc(100% - 15em);
+            height: 100%;
+            background-color: @contrast-color;
+            .conversation {
+                overflow: scroll;
+                width: 100%;
+                height: 100%;
+                padding: 2em;
+                padding-bottom: 5.5em;
+                .item {
+                    width: 90%;
+                    height: auto;
+                    margin-bottom: 1em;
+                    &.inbound {
+                        margin-right: 10%;
+                        div {
+                            text-align: left;
+                        }
+                        p {
+                            color: @text-color-normal;
+                            background-color: @shade-color;
+                        }
+                        time {
+                            text-align: left;
+                        }
+                    }
+                    &.outbound {
+                        margin-left: 10%;
+                        div {
+                            text-align: right;
+                        }
+                        p {
+                            color: @contrast-color;
+                            background-color: @primary-color;
+                            .border-radius(@border-radius-medium);
+                        }
+                        time {
+                            text-align: right;
+                        }
+                    }
+                    div {
+                        & + div {
+                            margin-top: .5em;
+                        }
+                    }
+                    p {
+                        display: inline-block;
+                        width: auto;
+                        padding: .75em 1em;
+                        .border-radius(@border-radius-medium);
+
+                    }
+                    time {
+                        display: inline-block;
+                        width: 100%;
+                        padding: .5em;
+                        color: @text-color-weak;
+                        font-size: .85em;
+                        line-height: .85em;
+                    }
+                }
+            }
+            textarea {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                height: 5.5em;
+                .border-radius(0);
+                border-right: none;
+                border-bottom: none;
+                border-left: none;
+            }
+        }
+    }
+}
 
 // Forum
 
@@ -413,13 +557,13 @@ form {
                         border-radius: 0;
                     }
                     .icon {
-                        width: 3em;
-                        height: 3em;
+                        width: 3.5em;
+                        height: 3.5em;
                         svg {
                             position: relative;
-                            width: 1.2em;
-                            height: 1.2em;
-                            margin: .9em;
+                            width: 1.3em;
+                            height: 1.3em;
+                            margin: 1.1em;
                             vertical-align: middle;
                             path {
                                 fill: @contrast-color;
@@ -428,11 +572,11 @@ form {
                         }
                     }
                     input {
-                        width: calc(100% - 3em);
-                        height: 3em;
+                        width: calc(100% - 3.5em);
+                        height: 3.5em;
                         .no-padding;
                         color: @contrast-color;
-                        line-height: 3em;
+                        line-height: 3.5em;
                         border: none;
                         background-color: transparent;
                         .placeholder-color(tint(@secondary-color, 75%));
@@ -440,6 +584,7 @@ form {
                 }
                 button {
                     width: 20%;
+                    height: 3.5em / 1.1;
                     padding-left: 0;
                     padding-right: 0;
                     .regular-font;
@@ -448,8 +593,8 @@ form {
                     svg {
                         position: relative;
                         width: auto;
-                        height: 1em;
-                        margin-right: .25em;
+                        height: 1.2em;
+                        margin-right: .2em;
                         vertical-align: middle;
                         path {
                             fill: @contrast-color;
@@ -466,7 +611,7 @@ form {
                     display: table;
                     width: 100%;
                     color: @text-color-normal;
-                    line-height: 3em;
+                    line-height: 3.5em;
                     border-bottom: 1px solid tint(@secondary-color, 75%);
                     &:last-child {
                         border-bottom: none;
@@ -504,11 +649,11 @@ form {
                     }
                     .contributors {
                         width: 20%;
-                        height: 3em;
-                        padding: .6em 0;
+                        height: 3.5em;
+                        padding: .75em 0;
                         img {
-                            width: 1.8em;
-                            height: 1.8em;
+                            width: 2em;
+                            height: 2em;
                             margin-right: .1em;
                             .border-radius(@border-radius-full);
                         }
@@ -542,8 +687,80 @@ form {
     }
     &-entry {
         .content {
-            .credit {
-                .credit-metrics(50px);
+            .no-padding;
+            .entry {
+                padding: 2.5em;
+                background-color: @contrast-color;
+                .credit {
+                    .credit-metrics(50px);
+                    margin-bottom: 1.5em;
+                }
+                article {
+                    line-height: 150%;
+                    h1 {
+                        .no-margin;
+                        margin-bottom: .5em;
+                        color: @text-color-strong;
+                        .regular-font;
+                        font-size: 1.75em;
+                        line-height: 150%;
+                    }
+                    p {
+                        font-size: 1.05em;
+                        & + p {
+                            margin-top: 1em;
+                        }
+                    }
+                }
+            }
+            .replies {
+                padding: 2.5em;
+                background-color: @shade-color;
+                .synopsis {
+                    display: inline-block;
+                    width: 100%;
+                    margin-bottom: 1em;
+                    button {
+                        float: right;
+                        width: auto;
+                        font-size: .75em;
+                    }
+                }
+                .item {
+                    margin-bottom: 1.25em;
+                    .credit {
+                        .credit-metrics(40px);
+                        margin-bottom: .25em;
+                        span {
+                            color: @text-color-normal;
+                        }
+                    }
+                    p {
+                        margin-left: 40px * 1.2;
+                        .regular-font;
+                        font-size: .95em;
+                        line-height: 150%;
+                    }
+                }
+                .reply {
+                    display: inline-block;
+                    width: 100%;
+                    textarea {
+                        width: 100%;
+                        height: 7.5em;
+                        &.closed {
+                            height: 0;
+                            border: none;
+                        }
+                    }
+                    button {
+                        float: right;
+                        width: auto;
+                        margin-top: .5em;
+                        margin-left: .5em;
+                        font-size: .9em;
+                    }
+                }
             }
         }
     }
@@ -606,7 +823,6 @@ form {
                 margin-left: 5px;
                 padding: 0 10px;
                 line-height: calc(@bar-height - 10px);
-                text-align: left;
                 .single-line-text;
                 vertical-align: middle;
             }
@@ -656,6 +872,12 @@ form {
 
 .@{prefix}-alert {
     width: 320px;
+    .content {
+        p {
+            text-align: center;
+            font-size: 1.1em;
+        }
+    }
     & > button {
         border-top-left-radius: 0;
         border-top-right-radius: 0;
@@ -690,8 +912,8 @@ form {
                 float: left;
                 opacity: 1;
                 color: @text-color-normal;
-                font-size: .85em;
-                line-height: 3.3em / .85;
+                font-size: .9em;
+                line-height: 3.3em / .9;
                 text-align: center;
                 .transition(opacity .35s ease);
                 &:hover {
